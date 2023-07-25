@@ -61,6 +61,20 @@
     .button:hover {
       background-color: #2980b9;
     }
+
+    /* Button container styles */
+    .button-container {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-top: 10px;
+    }
+
+    /* Button spacing */
+    .button:not(:first-child) {
+      margin-left: 10px;
+    }
   </style>
   <script>
     // JavaScript for interactive features and video playback
@@ -70,7 +84,7 @@
     }
 
     function playVideo() {
-      var video = document.getElementById('background-video.mp4');
+      var video = document.getElementById('background-video');
       if (video.paused) {
         video.style.opacity = '1'; // Show the video
         video.play();
@@ -85,6 +99,17 @@
       <source src="background-video.mp4" type="video/mp4">
       <!-- Add more video sources here for different formats -->
     </video>
+
+    <!-- Button container -->
+    <div class="button-container">
+      <!-- About button -->
+      <button class="button" onclick="showMessage(); playVideo();">About</button>
+      <!-- News button -->
+      <button class="button" onclick="window.location.href = 'news.html';">News</button>
+      <!-- Media button -->
+      <button class="button" onclick="window.location.href = 'media.html';">Media</button>
+    </div>
+
     <div class="content">
       <h1>Welcome to the Complex Webpage</h1>
       <p>Click the button below to see an interactive feature:</p>
