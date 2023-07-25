@@ -53,10 +53,13 @@
             align-items: center;
             height: 300px; /* Adjust height as needed */
             overflow: hidden;
+            width: 300px; /* Adjust width to show one picture at a time */
+            margin: 0 auto; /* Center the carousel */
         }
 
         .carousel {
             display: flex;
+            width: fit-content; /* Adjust to fit the images */
             transition: transform 0.3s ease-in-out;
         }
 
@@ -100,11 +103,29 @@
 
     <script>
         const carousel = document.querySelector(".carousel");
+        const carouselContainer = document.querySelector(".carousel-container");
         let currentIndex = 0;
-        setInterval(() => {
+        const slideWidth = 320; /* Adjust to the width of one image + margin */
+        const interval = 3000; /* Change photo every 3 seconds (adjust as needed) */
+        let timer;
+
+        const nextSlide = () => {
             currentIndex = (currentIndex + 1) % carousel.children.length;
-            carousel.style.transform = `translateX(-${currentIndex * 320}px)`; /* Adjust image width + margin */
-        }, 3000); /* Change photo every 3 seconds (adjust as needed) */
+            carousel.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        };
+
+        const startCarousel = () => {
+            timer = setInterval(nextSlide, interval);
+        };
+
+        const stopCarousel = () => {
+            clearInterval(timer);
+        };
+
+        carouselContainer.addEventListener("mouseenter", stopCarousel);
+        carouselContainer.addEventListener("mouseleave", startCarousel);
+
+        startCarousel();
     </script>
 </body>
 
