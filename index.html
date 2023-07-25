@@ -40,18 +40,20 @@
             font-size: 18px;
             padding: 10px 20px;
             border-radius: 50px; /* Create big bubble panels */
-            background-color: #ffffff; /* White background for the buttons */
+            background-color: rgba(173, 216, 230, 0.7); /* Light metallic blue with transparency */
+            font-family: 'Roboto', sans-serif; /* Material-style flat font */
+            transition: background-color 0.3s ease-in-out;
         }
 
         nav a:hover {
-            background-color: #f2f2f2; /* Light gray background on hover */
+            background-color: rgba(173, 216, 230, 1); /* Slightly darker blue on hover */
         }
 
         .carousel-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 300px; /* Adjust height as needed */
+            height: 400px; /* Adjust height as needed, making the frame larger */
             overflow: hidden;
             width: 300px; /* Adjust width to show one picture at a time */
             margin: 0 auto; /* Center the carousel */
@@ -64,7 +66,9 @@
         }
 
         .carousel img {
-            width: 300px; /* Adjust image width as needed */
+            width: 100%; /* Adjust image width to fill the entire panel */
+            height: 100%; /* Adjust image height to fill the entire panel */
+            object-fit: cover; /* Scale the image proportionally to cover the panel */
             margin: 0 10px; /* Adjust spacing between images */
         }
     </style>
@@ -77,10 +81,10 @@
 
     <nav>
         <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#news">News</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
@@ -105,7 +109,7 @@
         const carousel = document.querySelector(".carousel");
         const carouselContainer = document.querySelector(".carousel-container");
         let currentIndex = 0;
-        const slideWidth = 320; /* Adjust to the width of one image + margin */
+        const slideWidth = carouselContainer.offsetWidth; /* Adjust to the width of the carousel container */
         const interval = 3000; /* Change photo every 3 seconds (adjust as needed) */
         let timer;
 
