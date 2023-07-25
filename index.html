@@ -51,19 +51,14 @@
 
         .gallery-container {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            overflow: hidden;
-        }
-
-        .gallery {
-            display: flex;
-            width: 60%; /* Adjust the width to span 60% of the middle of the page */
+            margin: 20px 0;
         }
 
         .gallery img {
-            width: 100px; /* Adjust the width of the small pictures */
+            width: 30%; /* Adjust the width of the images in the gallery */
             height: auto; /* Keep the original aspect ratio */
             margin: 10px; /* Adjust spacing between images */
             cursor: pointer; /* Show pointer cursor on images to indicate they are clickable */
