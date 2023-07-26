@@ -10,7 +10,7 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background-color: #3498db; /* Nice blue background color */
+            background-color: #f9f9f9; /* Light gray background color */
         }
 
         header {
@@ -18,11 +18,10 @@
         }
 
         nav {
-            background-color: rgba(255, 255, 255, 0.7); /* Blue background transparency for buttons */
+            background-color: #333; /* Dark gray background color for the header */
             padding: 20px;
             display: flex;
-            justify-content: space-around;
-            align-items: center;
+            justify-content: center;
         }
 
         nav ul {
@@ -35,30 +34,57 @@
         }
 
         nav a {
-            color: #333;
+            color: #fff; /* White text color for the buttons */
             text-decoration: none;
             font-size: 18px;
             padding: 10px 20px;
-            border-radius: 50px; /* Create big bubble panels */
-            background-color: rgba(173, 216, 230, 0.7); /* Light metallic blue with transparency */
+            border-radius: 50px; /* Rounded buttons */
+            background-color: #555; /* Dark gray background color for the buttons */
             font-family: 'Roboto', sans-serif; /* Material-style flat font */
             transition: background-color 0.3s ease-in-out;
         }
 
         nav a:hover {
-            background-color: rgba(173, 216, 230, 1); /* Slightly darker blue on hover */
+            background-color: #777; /* Slightly lighter gray on hover */
+        }
+
+        .main-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .blog-area {
+            max-width: 60%; /* Adjust the width of the blog area */
+            padding: 20px;
+            margin: 20px;
+            background-color: #fff; /* White background for the blog area */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect for the blog area */
+        }
+
+        .blog-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .blog-content {
+            font-size: 16px;
+            line-height: 1.6;
         }
 
         .gallery-container {
+            max-width: 40%; /* Adjust the width of the picture sidebar */
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
-            margin: 20px 0;
+            margin: 20px;
         }
 
         .gallery img {
-            width: 30%; /* Adjust the width of the images in the gallery */
+            width: 100px; /* Adjust the width of the images in the gallery */
             height: auto; /* Keep the original aspect ratio */
             margin: 10px; /* Adjust spacing between images */
             cursor: pointer; /* Show pointer cursor on images to indicate they are clickable */
@@ -107,7 +133,22 @@
         </ul>
     </nav>
 
-    <main>
+    <div class="main-container">
+        <div class="blog-area">
+            <div class="blog-title">Welcome to the Black Spades Website</div>
+            <div class="blog-content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse gravida facilisis magna,
+                    eget suscipit orci lobortis nec. Integer ut auctor eros. Pellentesque tincidunt urna nec lectus
+                    facilisis, a interdum massa commodo. Sed eu erat metus.</p>
+                <p>Fusce vel ipsum fringilla, posuere odio ut, vehicula elit. Suspendisse et felis at orci tincidunt
+                    interdum. Donec dapibus ipsum non enim convallis, eget auctor nunc luctus. Nam nec odio eu
+                    felis sagittis bibendum a ut purus.</p>
+                <p>Aliquam efficitur magna vitae leo rutrum iaculis. Sed lacinia, odio ut auctor bibendum, tortor
+                    lacus tincidunt orci, id volutpat turpis risus sit amet eros. Quisque iaculis massa in purus
+                    eleifend laoreet. Sed eget aliquet libero.</p>
+            </div>
+        </div>
+
         <div class="gallery-container">
             <div class="gallery">
                 <img src="photo1.jpg" alt="Photo 401" onclick="openLightbox('photo1.jpg')">
@@ -117,16 +158,12 @@
                 <!-- Add more photos with sequential numbers -->
             </div>
         </div>
+    </div>
 
-        <!-- Lightbox container -->
-        <div class="lightbox" onclick="closeLightbox()">
-            <img src="" alt="Enlarged Photo" id="lightbox-image">
-        </div>
-    </main>
-
-    <footer>
-        <!-- Add your footer content here if desired -->
-    </footer>
+    <!-- Lightbox container -->
+    <div class="lightbox" onclick="closeLightbox()">
+        <img src="" alt="Enlarged Photo" id="lightbox-image">
+    </div>
 
     <script>
         function openLightbox(imageSrc) {
@@ -144,3 +181,4 @@
 </body>
 
 </html>
+
