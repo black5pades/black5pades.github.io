@@ -53,11 +53,11 @@
             justify-content: center;
             align-items: flex-start;
             flex-wrap: wrap;
-            margin-left: 20px; /* Add a margin on the left side of the page */
         }
 
         .blog-area {
             max-width: 40%; /* Adjust the width of the blog area */
+            width: calc(50% - 20px); /* Make the textbox slightly more narrow */
             padding: 20px;
             margin: 20px;
             background-color: #fff; /* White background for the blog area */
@@ -77,7 +77,8 @@
         }
 
         .gallery-container {
-            max-width: 30%; /* Adjust the width of the picture sidebar */
+            max-width: 50%; /* Adjust the width of the picture sidebar */
+            width: calc(50% - 20px); /* Make the thumbnail sidebar slightly more narrow */
             display: flex;
             flex-wrap: wrap;
             justify-content: flex-start;
@@ -90,6 +91,11 @@
             height: auto; /* Keep the original aspect ratio */
             margin: 10px; /* Adjust spacing between images */
             cursor: pointer; /* Show pointer cursor on images to indicate they are clickable */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1); /* Enlarge the thumbnail slightly on hover */
         }
 
         .lightbox {
