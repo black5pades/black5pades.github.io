@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News - Black Spades Website</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Montserrat', sans-serif; /* Montserrat font */
+            font-family: 'Roboto', sans-serif; /* Roboto font */
             background-color: #f9f9f9; /* Light gray background color */
         }
 
@@ -57,11 +57,12 @@
         }
 
         .blog-area {
-            max-width: 40%; /* Adjust the width of the blog area to 40% */
+            max-width: 48%; /* Adjust the width of the blog area to 48% (20% wider) */
             padding: 20px;
             margin: 20px;
             background-color: #e0e0e0; /* Slightly darker gray background for the blog area */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect for the blog area */
+            text-align: justify; /* Justify the text inside the containers */
         }
 
         .blog-title {
@@ -72,13 +73,21 @@
         }
 
         .blog-content {
-            font-size: 22px; /* Increase the font size for the blog content */
+            font-size: 20px; /* Slightly decrease the font size for the blog content */
             line-height: 1.6;
             font-weight: bold; /* Make the blog content text bolder */
         }
 
         .logo {
             height: 120px; /* Set the height of the logo to 120px */
+        }
+
+        .newsletter-text {
+            max-width: 80%; /* Adjust the width of the newsletter text to 80% */
+            font-size: 26px; /* Slightly increase the font size */
+            font-weight: bold; /* Make the newsletter text bolder */
+            text-align: center; /* Center the newsletter text */
+            margin: 20px auto; /* Add margin for better spacing */
         }
     </style>
 </head>
@@ -97,9 +106,7 @@
     </header>
 
     <div class="main-container">
-        <div class="blog-area">
-            <div class="blog-title">Check this newsletter for the latest events and updates</div>
-        </div>
+        <div class="newsletter-text">Check this newsletter for the latest events and updates</div>
     </div>
 
     <div class="main-container">
