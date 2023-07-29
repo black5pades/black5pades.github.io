@@ -90,7 +90,7 @@
             margin: 20px auto;
         }
 
-        /Lightbox styles */
+        /* New CSS styles for the image lightbox */
         .lightbox {
             display: none;
             position: fixed;
@@ -127,7 +127,7 @@
 
     <div class="main-container">
         <div class="newsletter-heading">Check this newsletter for the latest events and updates</div>
-    </div></br>
+    </div>
 
     <div class="main-container">
         <div class="blog-area">
@@ -170,7 +170,7 @@
                 const lightboxImage = document.getElementById('lightboxImage');
 
                 lightboxImage.src = image.href;
-                lightbox.style.display = 'block';
+                lightbox.style.display = 'flex'; // Display lightbox as a flex container
             });
         });
 
