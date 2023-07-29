@@ -14,8 +14,83 @@
             background-color: #f9f9f9;
         }
 
-        /* ... (Existing CSS styles remain the same) ... */
+        header {
+            background-color: #222;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
+        nav {
+            display: flex;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav li {
+            margin: 0 15px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 50px;
+            background-color: rgba(100, 100, 100, 0.8);
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        nav a:hover {
+            background-color: rgba(120, 120, 120, 0.9);
+        }
+
+        .main-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .blog-area {
+            max-width: 48%;
+            padding: 20px;
+            margin: 20px;
+            background-color: #e0e0e0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: justify;
+        }
+
+        .blog-title {
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .blog-content {
+            font-size: 22px;
+            line-height: 1.6;
+            font-weight: bold;
+        }
+
+        .logo {
+            height: 120px;
+        }
+
+        .newsletter-heading {
+            max-width: 80%;
+            font-size: 28px;
+            font-weight: bold;
+            text-align: center;
+            margin: 20px auto;
+        }
+
+        /* New CSS styles for the image lightbox */
         .lightbox {
             display: none;
             position: fixed;
@@ -58,8 +133,10 @@
         <div class="blog-area">
             <div class="blog-title">Mario's Event</div>
             <div class="blog-content">
-                <!-- Add a class "enlarge-image" to enable the lightbox on this image -->
-                <img src="Mario23.jpg" alt="Mario's Event" style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 10px;" class="enlarge-image">
+                <!-- Use the "lightbox-image" class to enable the lightbox effect -->
+                <a class="lightbox-image" href="Mario23.jpg">
+                    <img src="Mario23.jpg" alt="Mario's Event" style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 10px;">
+                </a>
                 <p>What's up ya'll, you know what time of the year it is again. It's the time to come out and celebrate the legendary Disco King Mario. It's going down August 29th. Check the rest of the deets in the flyer. Hope to see all my brothers and sisters there!!!</p>
             </div>
         </div>
@@ -67,8 +144,10 @@
         <div class="blog-area">
             <div class="blog-title">Upcoming Event</div>
             <div class="blog-content">
-                <!-- Add a class "enlarge-image" to enable the lightbox on this image -->
-                <img src="event.jpg" alt="Upcoming Event" style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 10px;" class="enlarge-image">
+                <!-- Use the "lightbox-image" class to enable the lightbox effect -->
+                <a class="lightbox-image" href="event.jpg">
+                    <img src="event.jpg" alt="Upcoming Event" style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 10px;">
+                </a>
                 <p>Save the date for our upcoming event! More details will be revealed soon. Stay tuned for updates and mark your calendars for a day of fun and celebration!</p>
             </div>
         </div>
@@ -81,14 +160,16 @@
 
     <script>
         // JavaScript to enable the image lightbox
-        const blogImages = document.querySelectorAll('.enlarge-image');
+        const lightboxImages = document.querySelectorAll('.lightbox-image');
 
-        blogImages.forEach(image => {
-            image.addEventListener('click', () => {
+        lightboxImages.forEach(image => {
+            image.addEventListener('click', (event) => {
+                event.preventDefault(); // Prevent default link behavior
+
                 const lightbox = document.getElementById('lightbox');
                 const lightboxImage = document.getElementById('lightboxImage');
 
-                lightboxImage.src = image.src;
+                lightboxImage.src = image.href;
                 lightbox.style.display = 'block';
             });
         });
